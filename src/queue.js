@@ -18,7 +18,13 @@ class Queue {
     this.queue = [];
   }
 
-  getUnderlyingList() {}
+  getUnderlyingList() {
+    let list = null;
+    for (let i = this.queue.length - 1; i >= 0; i--) {
+      list = { value: this.queue[i], next: list };
+    }
+    return list;
+  }
 
   enqueue(value) {
     this.queue.push(value);
